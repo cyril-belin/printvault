@@ -55,12 +55,14 @@ Legend: `[x]` pass · `[!]` issue found (note it) · `[n/a]` not applicable.
 
 | Platform | Compile/build | Packaging | Runtime |
 |----------|---------------|-----------|---------|
-| macOS (Apple Silicon) | ✅ local | ✅ local (.app + .dmg) | ✅ local smoke test |
-| Windows | ⏳ pending first CI run | ⏳ pending first CI run | ❌ not runtime-tested |
-| Linux | ⏳ pending first CI run | ⏳ pending first CI run | ❌ not runtime-tested |
+| macOS (Apple Silicon) | ✅ local + CI | ✅ local + CI (.app + .dmg) | ✅ local smoke test |
+| Windows | ✅ CI | ✅ CI (NSIS .exe + MSI) | ❌ not runtime-tested |
+| Linux | ✅ CI | ✅ CI (.AppImage + .deb + .rpm) | ❌ not runtime-tested |
 
-The GitHub Actions workflow (`.github/workflows/build.yml`) validates
-compile/build and packaging on all three OSes once the repository is pushed to
-GitHub; its runs are the source of truth for the two pending rows. Runtime
-columns may only be checked after a human runs the checklist on a real
+CI evidence: GitHub Actions workflow `.github/workflows/build.yml` compiles,
+type-checks, lints and packages PrintVault on `macos-latest`, `windows-latest`
+and `ubuntu-latest` (first fully green run: 2026-09-04, artifacts
+`PrintVault-macOS` / `PrintVault-Windows` / `PrintVault-Linux`). CI proves
+compile/build and packaging only — it is not a runtime test. The runtime
+column may only be checked after a human runs this checklist on a real
 machine. Update this table honestly whenever a platform is validated.
