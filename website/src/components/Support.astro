@@ -1,0 +1,66 @@
+---
+import { SUPPORT_URL } from '../data/site';
+---
+
+<section id="support">
+  <div class="container inner">
+    <h2>Support PrintVault</h2>
+    <p>
+      PrintVault is free. If it saves you time managing your 3D-printing
+      library, you can support its development with a small tip.
+    </p>
+    <a class="tip" href={SUPPORT_URL} rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+        <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+        <line x1="6" x2="6" y1="2" y2="4"/>
+        <line x1="10" x2="10" y1="2" y2="4"/>
+        <line x1="14" x2="14" y1="2" y2="4"/>
+      </svg>
+      Buy Me a Coffee
+    </a>
+  </div>
+</section>
+
+<style>
+  #support {
+    padding-top: 24px;
+    text-align: center;
+  }
+
+  .inner {
+    max-width: 560px;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  p {
+    color: var(--text-2);
+    margin: 12px 0 24px;
+  }
+
+  .tip {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text-2);
+    font-weight: 550;
+    font-size: 0.95rem;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .tip:hover {
+    border-color: var(--text-3);
+    color: var(--text);
+  }
+
+  .tip svg {
+    width: 18px;
+    height: 18px;
+  }
+</style>

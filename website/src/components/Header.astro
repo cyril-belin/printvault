@@ -1,0 +1,84 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<header class="site-header">
+  <div class="container inner">
+    <a class="brand" href={`${base}/`} aria-label="PrintVault home">
+      <img src={`${base}/mark.png`} alt="" width="26" height="26" />
+      <span>PrintVault</span>
+    </a>
+
+    <nav aria-label="Main">
+      <a href={`${base}/#features`}>Features</a>
+      <a href={`${base}/#privacy`}>Privacy</a>
+      <a href="https://github.com/cyril-belin/printvault" rel="noopener">GitHub</a>
+      <a href={`${base}/#support`}>Support</a>
+    </nav>
+
+    <a class="btn primary small download" href={`${base}/#download`}>Download</a>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(19, 20, 23, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .inner {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    height: 60px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+    font-weight: 650;
+    font-size: 1.02rem;
+    letter-spacing: -0.01em;
+  }
+
+  .brand img {
+    border-radius: 6px;
+  }
+
+  nav {
+    display: flex;
+    gap: 26px;
+    margin-left: auto;
+  }
+
+  nav a {
+    color: var(--text-2);
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+
+  nav a:hover {
+    color: var(--text);
+  }
+
+  .download {
+    margin-left: 2px;
+  }
+
+  @media (max-width: 720px) {
+    nav {
+      display: none;
+    }
+
+    .download {
+      margin-left: auto;
+    }
+  }
+</style>

@@ -1,0 +1,106 @@
+---
+const base = import.meta.env.BASE_URL;
+---
+
+<section id="showcase" class="showcase">
+  <div class="container">
+    <div class="row">
+      <div class="copy">
+        <h2>Every model, one glance away</h2>
+        <p>
+          Gallery view renders a thumbnail for each STL and 3MF in your
+          library — badged by format, sized to the kilobyte. Instant filename
+          search filters the whole tree as you type.
+        </p>
+      </div>
+      <div class="media">
+        <img
+          class="shot"
+          src={`${base}/screenshots/gallery.webp`}
+          alt="Gallery view with live search active: matching models shown as rendered thumbnails, each labelled with its file name, STL or 3MF badge and size."
+          width="2160"
+          height="1350"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <div class="row flip">
+      <div class="copy">
+        <h2>Multi-object 3MF, previewed as one</h2>
+        <p>
+          Assemblies with multiple objects and materials open as a single
+          rigid body in the interactive viewer. Orbit and zoom freely, and
+          read dimensions, triangle and object counts from the info bar.
+        </p>
+      </div>
+      <div class="media">
+        <img
+          class="shot"
+          src={`${base}/screenshots/viewer-3mf.webp`}
+          alt="A two-piece 3MF assembly previewed in the 3D viewer, with the info bar reporting two objects and 124 triangles."
+          width="2160"
+          height="1350"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .showcase {
+    padding-top: 24px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: minmax(280px, 5fr) 8fr;
+    gap: 48px;
+    align-items: center;
+    padding: 44px 0;
+  }
+
+  .row + .row {
+    margin-top: 24px;
+  }
+
+  .row.flip {
+    grid-template-columns: 8fr minmax(280px, 5fr);
+  }
+
+  .row.flip .copy {
+    order: 2;
+  }
+
+  .row.flip .media {
+    order: 1;
+  }
+
+  .copy h2 {
+    margin-bottom: 14px;
+  }
+
+  .copy p {
+    margin: 0;
+    color: var(--text-2);
+    font-size: 1.02rem;
+  }
+
+  @media (max-width: 900px) {
+    .row,
+    .row.flip {
+      grid-template-columns: 1fr;
+      gap: 26px;
+      padding: 36px 0;
+    }
+
+    .row.flip .copy {
+      order: 1;
+    }
+
+    .row.flip .media {
+      order: 2;
+    }
+  }
+</style>

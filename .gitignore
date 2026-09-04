@@ -33,6 +33,11 @@ src-tauri/gen/schemas
 /thumbs/
 *.thumb
 
+# Website raw screenshot captures (the optimized WebP versions are committed
+# in website/public/screenshots/; see website/scripts/prepare-assets.mjs)
+/website-shots/
+website/.astro
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

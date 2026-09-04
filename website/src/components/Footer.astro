@@ -1,0 +1,92 @@
+---
+import { GITHUB_URL, SUPPORT_URL, SITE, RELEASE } from '../data/site';
+
+const base = import.meta.env.BASE_URL;
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="container inner">
+    <div class="brand">
+      <img src={`${base}/mark.png`} alt="" width="30" height="30" />
+      <div>
+        <span class="name">PrintVault</span>
+        <span class="tagline">{SITE.tagline}</span>
+      </div>
+    </div>
+
+    <nav aria-label="Footer">
+      <a href={GITHUB_URL} rel="noopener">GitHub</a>
+      <a href={`${base}/#download`}>Download</a>
+      <a href={SUPPORT_URL} rel="noopener">Support</a>
+    </nav>
+  </div>
+
+  <div class="container fineprint">
+    <p>
+      Version {RELEASE.version} · PrintVault runs locally on macOS, Windows and
+      Linux. © {year} PrintVault.
+    </p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 44px 0 40px;
+  }
+
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+  }
+
+  .brand img {
+    border-radius: 7px;
+  }
+
+  .name {
+    display: block;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+  }
+
+  .tagline {
+    display: block;
+    color: var(--text-3);
+    font-size: 0.86rem;
+  }
+
+  nav {
+    display: flex;
+    gap: 24px;
+  }
+
+  nav a {
+    color: var(--text-2);
+    font-size: 0.92rem;
+  }
+
+  nav a:hover {
+    color: var(--text);
+  }
+
+  .fineprint {
+    margin-top: 30px;
+  }
+
+  .fineprint p {
+    margin: 0;
+    color: var(--text-3);
+    font-size: 0.82rem;
+  }
+</style>
