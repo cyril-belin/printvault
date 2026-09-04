@@ -86,9 +86,10 @@ GitHub Actions only proves PrintVault **compiles and packages** per OS — it is
 not a runtime test. Real-machine validation is tracked in
 [docs/platform-testing-checklist.md](docs/platform-testing-checklist.md):
 
-- **macOS** — runtime-tested and packaging-tested locally
-- **Windows** — compile/build + packaging via CI; runtime **not** tested
-- **Linux** — compile/build + packaging via CI; runtime **not** tested
+- **macOS** — runtime-tested and packaging-tested locally, incl. the
+  2026-09-04 release-candidate pass (see the checklist for what was covered)
+- **Windows** — compile/build + packaging via CI; runtime **not** tested yet
+- **Linux** — compile/build + packaging via CI; runtime **not** tested yet
 
 ## Brand assets
 
