@@ -1,9 +1,17 @@
 # PrintVault
 
-A local desktop library for 3D printing files. PrintVault indexes folders that
-already contain your `.stl` and `.3mf` files, shows their real directory
-hierarchy, and previews any model in an interactive 3D viewer — without ever
-copying, moving or modifying your files.
+A local desktop library and viewer for STL and 3MF files.
+
+🌐 **Website:** https://cyril-belin.github.io/printvault/ · ⬇️ **Downloads:** https://github.com/cyril-belin/printvault/releases/latest · ☕ **Support:** https://buymeacoffee.com/printvault
+
+<p>
+  <img src="website/public/screenshots/gallery.webp" width="49%" alt="PrintVault gallery view: rendered thumbnails for every STL and 3MF in the library, with instant filename search">
+  <img src="website/public/screenshots/viewer-3mf.webp" width="49%" alt="PrintVault 3D viewer previewing a multi-object 3MF assembly, with dimensions and object count in the info bar">
+</p>
+
+PrintVault indexes folders that already contain your `.stl` and `.3mf` files,
+shows their real directory hierarchy, and previews any model in an interactive
+3D viewer — without ever copying, moving or modifying your files.
 
 Built with **Tauri 2 + Vue 3 + TypeScript + Vite + Three.js**.
 Runs natively on **macOS, Windows and Linux**. Current version: **0.1.0**.
@@ -42,13 +50,17 @@ Runs natively on **macOS, Windows and Linux**. Current version: **0.1.0**.
 - Roots, expanded folders, last selection and sidebar width persist across restarts
 - Nothing leaves your machine: no cloud, no accounts, no database
 
-## Platforms & build artifacts
+## Platforms & downloads
 
 | Platform | Bundles (`npm run tauri build`) |
 |----------|--------------------------------|
-| macOS    | `PrintVault.app`, `PrintVault_0.1.0_aarch64.dmg` |
-| Windows  | NSIS installer (`…-setup.exe`, per-user install) and MSI; WebView2 is bootstrapped automatically when missing |
+| macOS    | `PrintVault.app`, `PrintVault_0.1.0_aarch64.dmg` (Apple Silicon) |
+| Windows  | NSIS installer (`…-setup.exe`, per-user) and MSI; WebView2 is bootstrapped automatically when missing |
 | Linux    | `…_amd64.AppImage`, `…_amd64.deb`, `…_amd64.rpm` |
+
+Installers for the current release are published on the
+[GitHub Releases page](https://github.com/cyril-belin/printvault/releases/latest) —
+download links are also on the [website](https://cyril-belin.github.io/printvault/).
 
 Settings live in the OS-appropriate app-config directory and thumbnails in the
 app-cache directory on every platform (Application Support / Caches on macOS,
@@ -57,6 +69,14 @@ AppData on Windows, XDG config/cache on Linux); nothing is hardcoded.
 Linux runtime dependencies are the standard Tauri v2 set — WebKitGTK 4.1 and
 GTK 3 with their libraries (`libwebkit2gtk-4.1-0`, `libgtk-3-0`); the `.deb`
 declares them automatically, AppImage bundles what it can.
+
+## Privacy
+
+PrintVault is local-first: it indexes and previews only the folders you choose,
+directly on your computer. Your STL and 3MF library is never uploaded to a
+cloud service — no cloud, no accounts, no telemetry.
+
+## Development
 
 ### Local development
 
@@ -78,7 +98,9 @@ The TypeScript check (`vue-tsc`) runs as part of the frontend build.
 `.github/workflows/build.yml` builds PrintVault independently on
 `macos-latest`, `windows-latest` and `ubuntu-latest` on every push and PR:
 type check + frontend build, `cargo check`, `cargo clippy --all-targets`,
-then full Tauri bundles, uploaded as artifacts. No signing or publishing yet.
+then full Tauri bundles, uploaded as artifacts (unsigned; releases are
+published manually). `.github/workflows/pages.yml` deploys the landing page
+in `website/` to GitHub Pages.
 
 ### Runtime validation status
 
@@ -103,6 +125,7 @@ src-tauri/icons/                      generated platform icons (.icns/.ico/PNGs)
 src/assets/printvault-mark.png        in-app header mark
 src/assets/printvault-logo.png        full master copy for About/README/website use
 public/favicon.png                    web favicon
+website/public/                       website mark, favicon, OG card, screenshots
 ```
 
 To regenerate every platform icon after changing the master artwork, update
@@ -138,6 +161,7 @@ src-tauri/               backend (Rust, only what native access requires)
 scripts/make-fixtures.mjs            generates a demo library with real STL/3MF files
 scripts/make-multi-object-fixture.mjs  regenerates the two-object 3MF used for orientation tests
 dev-assets/test-library/             generated demo library (add it in the app to try PrintVault)
+website/                             Astro landing page, deployed to GitHub Pages
 ```
 
 Notes on the architecture:
