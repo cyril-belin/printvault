@@ -26,8 +26,8 @@ export const SUPPORT_URL = 'https://buymeacoffee.com/printvault';
 export const RELEASE = {
   tag: 'v0.1.0',
   version: '0.1.0',
-  /** Flip to true once the v0.1.0 GitHub Release is published. */
-  published: false,
+  /** True once the GitHub Release is published; buttons then link directly. */
+  published: true,
 } as const;
 
 const RELEASES_BASE = `${GITHUB_URL}/releases`;
@@ -70,9 +70,9 @@ function platform(
 }
 
 /**
- * Expected v0.1.0 asset file names (Tauri v2 bundling, productName
- * "PrintVault"). Verify against the actual release before flipping
- * RELEASE.published to true.
+ * v0.1.0 asset file names as uploaded to the GitHub Release (Tauri v2
+ * bundling, productName "PrintVault"). If these ever change, update them
+ * here — and verify against the release when bumping RELEASE.tag.
  */
 export const PLATFORM_DOWNLOADS: PlatformDownload[] = [
   platform('macOS', 'Apple Silicon', [
@@ -85,6 +85,6 @@ export const PLATFORM_DOWNLOADS: PlatformDownload[] = [
   platform('Linux', 'x64', [
     { label: 'Download for Linux', detail: 'x64 · AppImage', file: 'PrintVault_0.1.0_amd64.AppImage' },
     { label: '.deb package', detail: 'x64 · DEB', file: 'PrintVault_0.1.0_amd64.deb' },
-    { label: '.rpm package', detail: 'x64 · RPM', file: 'PrintVault_0.1.0_amd64.rpm' },
+    { label: '.rpm package', detail: 'x64 · RPM', file: 'PrintVault-0.1.0-1.x86_64.rpm' },
   ]),
 ];
