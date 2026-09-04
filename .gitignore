@@ -26,10 +26,11 @@ src-tauri/gen/schemas
 *.rpm
 
 # PrintVault runtime data (settings and thumbnail cache live in the OS
-# app-config / app-cache directories; these patterns are defensive)
-printvault-settings.json
-settings.json.tmp
-thumbs/
+# app-config / app-cache directories; these root-anchored patterns are
+# defensive only and must not match src/thumbs/)
+/printvault-settings.json
+/settings.json.tmp
+/thumbs/
 *.thumb
 
 # Editor directories and files
