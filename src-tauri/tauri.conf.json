@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "PrintVault",
+  "version": "0.1.0",
+  "identifier": "com.printvault.app",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "PrintVault",
+        "width": 1280,
+        "height": 840,
+        "minWidth": 980,
+        "minHeight": 600
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "publisher": "PrintVault",
+    "category": "GraphicsAndDesign",
+    "shortDescription": "A local desktop library for 3D printing files",
+    "longDescription": "PrintVault indexes folders that already contain your STL and 3MF files, shows their real directory hierarchy, and previews any model in an interactive 3D viewer — without ever copying, moving or modifying your files.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

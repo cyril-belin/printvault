@@ -1,0 +1,246 @@
+{
+ "name": "Impression 3D",
+ "path": "dev-assets/test-library/Impression 3D",
+ "isDir": true,
+ "children": [
+  {
+   "name": "Bureau",
+   "path": "dev-assets/test-library/Impression 3D/Bureau",
+   "isDir": true,
+   "children": [
+    {
+     "name": "organisateur",
+     "path": "dev-assets/test-library/Impression 3D/Bureau/organisateur",
+     "isDir": true,
+     "children": [
+      {
+       "name": "petits bacs",
+       "path": "dev-assets/test-library/Impression 3D/Bureau/organisateur/petits bacs",
+       "isDir": true,
+       "children": [
+        {
+         "name": "bac 10.stl",
+         "path": "dev-assets/test-library/Impression 3D/Bureau/organisateur/petits bacs/bac 10.stl",
+         "isDir": false,
+         "ext": "stl",
+         "size": 684,
+         "modified": 1788362755,
+         "children": []
+        },
+        {
+         "name": "bac A.stl",
+         "path": "dev-assets/test-library/Impression 3D/Bureau/organisateur/petits bacs/bac A.stl",
+         "isDir": false,
+         "ext": "stl",
+         "size": 684,
+         "modified": 1788362755,
+         "children": []
+        },
+        {
+         "name": "bac B.stl",
+         "path": "dev-assets/test-library/Impression 3D/Bureau/organisateur/petits bacs/bac B.stl",
+         "isDir": false,
+         "ext": "stl",
+         "size": 684,
+         "modified": 1788362755,
+         "children": []
+        }
+       ]
+      },
+      {
+       "name": "plateau stylos.3mf",
+       "path": "dev-assets/test-library/Impression 3D/Bureau/organisateur/plateau stylos.3mf",
+       "isDir": false,
+       "ext": "3mf",
+       "size": 1109,
+       "modified": 1788362755,
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "support telephone.stl",
+     "path": "dev-assets/test-library/Impression 3D/Bureau/support telephone.stl",
+     "isDir": false,
+     "ext": "stl",
+     "size": 1884,
+     "modified": 1788362755,
+     "children": []
+    }
+   ]
+  },
+  {
+   "name": "Elegoo",
+   "path": "dev-assets/test-library/Impression 3D/Elegoo",
+   "isDir": true,
+   "children": [
+    {
+     "name": "Accessoires",
+     "path": "dev-assets/test-library/Impression 3D/Elegoo/Accessoires",
+     "isDir": true,
+     "children": [
+      {
+       "name": "plateau.3mf",
+       "path": "dev-assets/test-library/Impression 3D/Elegoo/Accessoires/plateau.3mf",
+       "isDir": false,
+       "ext": "3mf",
+       "size": 1109,
+       "modified": 1788362755,
+       "children": []
+      },
+      {
+       "name": "poignee.stl",
+       "path": "dev-assets/test-library/Impression 3D/Elegoo/Accessoires/poignee.stl",
+       "isDir": false,
+       "ext": "stl",
+       "size": 6284,
+       "modified": 1788362755,
+       "children": []
+      }
+     ]
+    },
+    {
+     "name": "Centauri Carbon",
+     "path": "dev-assets/test-library/Impression 3D/Elegoo/Centauri Carbon",
+     "isDir": true,
+     "children": [
+      {
+       "name": "Mods",
+       "path": "dev-assets/test-library/Impression 3D/Elegoo/Centauri Carbon/Mods",
+       "isDir": true,
+       "children": [
+        {
+         "name": "collecteur.stl",
+         "path": "dev-assets/test-library/Impression 3D/Elegoo/Centauri Carbon/Mods/collecteur.stl",
+         "isDir": false,
+         "ext": "stl",
+         "size": 6284,
+         "modified": 1788362755,
+         "children": []
+        },
+        {
+         "name": "coude.3mf",
+         "path": "dev-assets/test-library/Impression 3D/Elegoo/Centauri Carbon/Mods/coude.3mf",
+         "isDir": false,
+         "ext": "3mf",
+         "size": 3158,
+         "modified": 1788362755,
+         "children": []
+        },
+        {
+         "name": "PART support camera.STL",
+         "path": "dev-assets/test-library/Impression 3D/Elegoo/Centauri Carbon/Mods/PART support camera.STL",
+         "isDir": false,
+         "ext": "stl",
+         "size": 1884,
+         "modified": 1788362755,
+         "children": []
+        },
+        {
+         "name": "silencieux.3mf",
+         "path": "dev-assets/test-library/Impression 3D/Elegoo/Centauri Carbon/Mods/silencieux.3mf",
+         "isDir": false,
+         "ext": "3mf",
+         "size": 2762,
+         "modified": 1788362755,
+         "children": []
+        }
+       ]
+      },
+      {
+       "name": "Tests",
+       "path": "dev-assets/test-library/Impression 3D/Elegoo/Centauri Carbon/Tests",
+       "isDir": true,
+       "children": [
+        {
+         "name": "assemblage 2 pieces.3mf",
+         "path": "dev-assets/test-library/Impression 3D/Elegoo/Centauri Carbon/Tests/assemblage 2 pieces.3mf",
+         "isDir": false,
+         "ext": "3mf",
+         "size": 2020,
+         "modified": 1788373332,
+         "children": []
+        },
+        {
+         "name": "corrompu.3mf",
+         "path": "dev-assets/test-library/Impression 3D/Elegoo/Centauri Carbon/Tests/corrompu.3mf",
+         "isDir": false,
+         "ext": "3mf",
+         "size": 76,
+         "modified": 1788362755,
+         "children": []
+        },
+        {
+         "name": "cube calibration ASCII.stl",
+         "path": "dev-assets/test-library/Impression 3D/Elegoo/Centauri Carbon/Tests/cube calibration ASCII.stl",
+         "isDir": false,
+         "ext": "stl",
+         "size": 2311,
+         "modified": 1788362755,
+         "children": []
+        },
+        {
+         "name": "tour de calibrage 20mm.3mf",
+         "path": "dev-assets/test-library/Impression 3D/Elegoo/Centauri Carbon/Tests/tour de calibrage 20mm.3mf",
+         "isDir": false,
+         "ext": "3mf",
+         "size": 1100,
+         "modified": 1788362755,
+         "children": []
+        },
+        {
+         "name": "tronque.stl",
+         "path": "dev-assets/test-library/Impression 3D/Elegoo/Centauri Carbon/Tests/tronque.stl",
+         "isDir": false,
+         "ext": "stl",
+         "size": 234,
+         "modified": 1788362755,
+         "children": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Maison",
+   "path": "dev-assets/test-library/Impression 3D/Maison",
+   "isDir": true,
+   "children": [
+    {
+     "name": "cuisine",
+     "path": "dev-assets/test-library/Impression 3D/Maison/cuisine",
+     "isDir": true,
+     "children": [
+      {
+       "name": "boite epices",
+       "path": "dev-assets/test-library/Impression 3D/Maison/cuisine/boite epices",
+       "isDir": true,
+       "children": [
+        {
+         "name": "boite 6 cases.stl",
+         "path": "dev-assets/test-library/Impression 3D/Maison/cuisine/boite epices/boite 6 cases.stl",
+         "isDir": false,
+         "ext": "stl",
+         "size": 2484,
+         "modified": 1788362755,
+         "children": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "pot de fleur v2.3mf",
+     "path": "dev-assets/test-library/Impression 3D/Maison/pot de fleur v2.3mf",
+     "isDir": false,
+     "ext": "3mf",
+     "size": 4332,
+     "modified": 1788367603,
+     "children": []
+    }
+   ]
+  }
+ ]
+}

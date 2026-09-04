@@ -1,0 +1,95 @@
+name: build
+
+# Multi-platform build validation: compiles PrintVault and produces native
+# bundles (macOS .app/.dmg, Windows NSIS/MSI, Linux AppImage/.deb/.rpm) on
+# every push and PR. No signing, no publishing — artifacts only.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+        include:
+          - os: macos-latest
+            artifact: PrintVault-macOS
+          - os: windows-latest
+            artifact: PrintVault-Windows
+          - os: ubuntu-latest
+            artifact: PrintVault-Linux
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache Rust build
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: Install Linux dependencies (WebKitGTK, GTK, tray)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libwebkit2gtk-4.1-dev \
+            build-essential \
+            curl \
+            wget \
+            file \
+            libxdo-dev \
+            libssl-dev \
+            libayatana-appindicator3-dev \
+            librsvg2-dev
+
+      # Runs vue-tsc (type check) and vite build. Must happen before
+      # cargo check/clippy: Tauri's codegen embeds ../dist at compile time.
+      - name: Type-check and build frontend
+        run: npm run build
+
+      - name: cargo check
+        run: cargo check
+        working-directory: src-tauri
+
+      - name: cargo clippy
+        run: cargo clippy --all-targets
+        working-directory: src-tauri
+
+      - name: Build Tauri bundles
+        run: npm run tauri build
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          if-no-files-found: error
+          path: |
+            src-tauri/target/release/bundle/**/*.app
+            src-tauri/target/release/bundle/**/*.dmg
+            src-tauri/target/release/bundle/**/*.exe
+            src-tauri/target/release/bundle/**/*.msi
+            src-tauri/target/release/bundle/**/*.AppImage
+            src-tauri/target/release/bundle/**/*.deb
+            src-tauri/target/release/bundle/**/*.rpm
